@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>СЕЗОНЫ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bg-animation"></div>
+        
+        <h1 class="title-animate">
+            <span class="title-text">СЕЗОНЫ ГОДА</span>
+            <div class="title-sub">12 месяцев в 4 сезонах</div>
+        </h1>
+        
+        <div class="search-box">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" placeholder="Введите сезон или месяц...">
+                <button onclick="searchSeason()">
+                    <i class="fas fa-search"></i> ПОИСК
+                </button>
+            </div>
+        </div>
+        
+        <div class="season-buttons">
+            <button class="winter-btn" onclick="showSeason('winter')">
+                <i class="fas fa-snowflake"></i> ЗИМА
+            </button>
+            <button class="spring-btn" onclick="showSeason('spring')">
+                <i class="fas fa-seedling"></i> ВЕСНА
+            </button>
+            <button class="summer-btn" onclick="showSeason('summer')">
+                <i class="fas fa-sun"></i> ЛЕТО
+            </button>
+            <button class="autumn-btn" onclick="showSeason('autumn')">
+                <i class="fas fa-leaf"></i> ОСЕНЬ
+            </button>
+            <button class="all-btn" onclick="showAll()">
+                <i class="fas fa-globe"></i> ВСЕ
+            </button>
+        </div>
+        
+        <div class="controls">
+            <button class="control-btn" onclick="sortAsc()">
+                <i class="fas fa-sort-amount-down"></i> ЗИМА → ОСЕНЬ
+            </button>
+            <button class="control-btn" onclick="sortDesc()">
+                <i class="fas fa-sort-amount-up"></i> ОСЕНЬ → ЗИМА
+            </button>
+            <button class="control-btn" onclick="toggleView()">
+                <i class="fas fa-th" id="view-icon"></i> ВИД
+            </button>
+        </div>
+        
+        <div class="info-section">
+            <h2 id="title" class="title-pulse">ВЫБЕРИ СЕЗОН</h2>
+            <div id="season-info" class="season-info slide-in"></div>
+            <div class="counter">
+                <i class="fas fa-images"></i>
+                <span id="image-counter">12</span> изображений
+            </div>
+        </div>
+        
+        <div class="gallery" id="gallery"></div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            Загрузка...
+        </div>
+    </div>
+    
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+                <div class="modal-tags">
+                    <span id="modalSeason"></span>
+                    <span id="modalMonth"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
